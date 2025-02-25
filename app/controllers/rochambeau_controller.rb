@@ -1,11 +1,25 @@
 class RochambeauController < ApplicationController
   def rock
     @com_move = ["rock", "paper", "scissors"].sample
+    if @com_move == "rock"
+      @outcome = "tied"
+    elsif @com_move == "paper"
+      @outcome = "lost"
+    else
+      @outcome = "won"
+    end
     render({ :template => "rochambeau_templates/rock"})
   end
 
   def paper
     @com_move = ["rock", "paper", "scissors"].sample
+    if @com_move == "rock"
+      @outcome = "won"
+    elsif @com_move == "paper"
+      @outcome = "tied"
+    else
+      @outcome = "lost"
+    end
     render({ :template => "rochambeau_templates/paper"})
   end
     
