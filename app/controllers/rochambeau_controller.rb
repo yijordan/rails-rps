@@ -1,4 +1,8 @@
 class RochambeauController < ApplicationController
+  def homepage
+    render({ :template => "rochambeau_templates/homepage"})
+  end
+  
   def rock
     @com_move = ["rock", "paper", "scissors"].sample
     if @com_move == "rock"
